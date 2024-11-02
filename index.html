@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SageNest Expert Sign-Up</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="screen active" id="welcome-screen">
+            <h1>Join us to transform learning with expert-driven session</h1>
+            <p><center>Welcome to SageNest</center></p>
+            <p>Let's get you signed up.</p>
+            <button onclick="showScreen('personal-info')">Get Started</button>
+        </div>
+
+        <div class="screen" id="personal-info" style="display: none;">
+            <h2>Basic Information</h2>
+            <form id="personal-info-form">
+                <label>Name:</label>
+                <input type="text" required>
+                <label>Email:</label>
+                <input type="email" required>
+                <label>Phone Number (optional):</label>
+                <input type="tel">
+                <label>Upload Photo:</label>
+                <input type="file">
+                <div class="button-container">
+                    <button type="button" onclick="showScreen('professional-details')">Next</button>
+                </div>
+            </form>
+            <div class="progress">Progress: 1 of 3</div>
+        </div>
+
+        <div class="screen" id="professional-details" style="display: none;">
+            <h2>Professional Details</h2>
+            <form id="professional-details-form">
+                <label>Area of Expertise:</label>
+                <select required>
+                    <option value="">Select...</option>
+                    <option value="web-development">Web Development</option>
+                    <option value="graphic-design">Graphic Design</option>
+                    <option value="data-science">Data Science</option>
+                </select>
+                <label>Years of Experience:</label>
+                <input type="number" min="0" required>
+                <label>Brief Bio:</label>
+                <textarea required></textarea>
+                <label>Upload Video:</label>
+                <input type="file">
+                <div class="button-container">
+                    <button type="button" onclick="showScreen('availability')">Next</button>
+                </div>
+            </form>
+            <div class="progress">Progress: 2 of 3</div>
+        </div>
+
+        <div class="screen" id="availability" style="display: none;">
+            <h2>Availability</h2>
+            <form id="availability-form">
+                <label>Days Available:</label><br>
+                <input type="checkbox"> Monday<br>
+                <input type="checkbox"> Tuesday<br>
+                <input type="checkbox"> Wednesday<br>
+                <input type="checkbox"> Thursday<br>
+                <input type="checkbox"> Friday<br>
+                <input type="checkbox"> Saturday<br>
+                <input type="checkbox"> Sunday<br>
+                <label>Time Slots:</label>
+                <select required>
+                    <option value="">Select...</option>
+                    <option value="9am-12pm">9 AM - 12 PM</option>
+                    <option value="1pm-5pm">1 PM - 5 PM</option>
+                </select>
+                <div class="button-container">
+                    <button type="button" onclick="showScreen('review')">Next</button>
+                </div>
+            </form>
+            <div class="progress">Progress: 3 of 3</div>
+        </div>
+
+        <div class="screen" id="review" style="display: none;">
+            <h2>Review & Submit</h2>
+            <div class="summary">
+                <p><strong>Summary of Information:</strong></p>
+                <p>Name: <span id="summary-name">[John Doe]</span></p>
+                <p>Email: <span id="summary-email">[john@example.com]</span></p>
+                <p>Area of Expertise: <span id="summary-expertise">[Web Development]</span></p>
+                <p>Years of Experience: <span id="summary-experience">[5]</span></p>
+                <p>Availability: <span id="summary-availability">[Mon-Fri, 9am-5pm]</span></p>
+            </div>
+            <div class="button-container">
+                <button onclick="showScreen('personal-info')">Edit</button>
+                <button onclick="alert('Submission successful!')">Submit</button>
+            </div>
+            <p>Thank you for signing up! We will review your application.</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
